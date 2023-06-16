@@ -141,11 +141,11 @@ function AppointmentDetail() {
                                 Mark as Completed
                             </Button>
                         </Col>
-                        <Col>
+                        {/* <Col>
                             <Button variant="danger" type="submit" className='rounded-pill w-100'>
                                 Cancel Appointment
                             </Button>
-                        </Col>
+                        </Col> */}
                     </Row></>}
                 {isCompleted && isDataLoaded &&
                     <div className="d-grid gap-2 col-6 mx-auto mt-3 mb-5">
