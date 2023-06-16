@@ -165,8 +165,6 @@ function AppointmentForm() {
             currentTime = moment(today).format("hh:mm A")
             if (currentTime.split(' ')[1] === 'PM')
               currentTime = moment(today).format("h:mm A")
-            // currentTime = '3:00 PM'
-            // currentTime = '11:59 AM'
           }
           let appointments = res.appointments.map((e) => e.time);
           let startTime = selectedDocData.availability.startTime
@@ -175,22 +173,21 @@ function AppointmentForm() {
           let tempArr = []
           let index = 0;
           let bookedTime = ''
-          // if (new Date(tempTime) > new Date(endTime)) {
-          //   endTime = moment(endTime).add(1, 'day')
-          //   let amTime = appointments.filter((e) => e.split(' ')[1] === 'AM').reverse()
-          //   let pmTime = appointments.filter((e) => e.split(' ')[1] === 'PM').sort()
-          //   appointments = [...pmTime, ...amTime]
-          // }
+
           if (appointments[0]) {
             bookedTime = appointments[index];
           }
           while (new Date(tempTime) <= new Date(endTime)) {
             let temp = moment(tempTime).format("h:mm A")
+            if (temp.split(' ')[1] === 'AM')
+              temp = moment(tempTime).format("hh:mm A")
+            console.log(temp, currentTime, temp > currentTime)
             if (temp <= currentTime) {
               tempTime = moment(tempTime).add(20, 'minutes').format("YYYY-MM-DD HH:mm")
               continue
             }
             else if (temp > currentTime && temp === bookedTime) {
+
               tempArr.push({ time: temp, booked: true })
               index += 1
               if (index < appointments.length) {

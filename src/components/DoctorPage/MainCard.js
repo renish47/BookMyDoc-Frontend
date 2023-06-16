@@ -162,7 +162,7 @@ function MainCard(props) {
             </Card.Header>
             <Card.Body className='p-0 p-xl-3'>
                 {props.isAvailabilityAdded && props.isLoaded && <ButtonGroup>
-                    <Container fluid className='p-0'>
+                    <Container fluid className='p-0 w-100 mx-auto'>
                         {timeSlotArray.map((slot, idx) => (
                             <ToggleButton
                                 key={idx}
@@ -172,7 +172,8 @@ function MainCard(props) {
                                 disabled={!slot.booked}
                                 name="radio"
                                 value={slot.time}
-                                className='m-1 m-md-2 p-2 timeSlotBtn rounded-3'
+                                className='m-md-2 p-2 timeSlotBtn rounded-3'
+                                style={{ margin: "2px" }}
                                 onClick={() => { openAppointmentHandler(slot.id) }}
                             >
                                 {slot.time}
@@ -185,8 +186,8 @@ function MainCard(props) {
                                 <button className="btn btn-outline-dark rounded-4 m-2  px-4" type="button" onClick={refreshHandler}>
                                     <i className="fa-solid fa-arrows-rotate" /> Refresh
                                 </button>
-                                <button className="btn btn-outline-dark rounded-4 m-2  px-3" type="button" >Block / Unblock Session(s)</button>
-                                <button className="btn btn-outline-dark rounded-4 m-2  px-3 text-center" type="button">Block / Unblock Day(s)</button>
+                                {/* <button className="btn btn-outline-dark rounded-4 m-2  px-3" type="button" >Block / Unblock Session(s)</button>
+                                <button className="btn btn-outline-dark rounded-4 m-2  px-3 text-center" type="button">Block / Unblock Day(s)</button> */}
                             </Col>
                         </Row>
                     </Container>

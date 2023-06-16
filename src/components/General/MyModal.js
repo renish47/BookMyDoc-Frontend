@@ -3,7 +3,6 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
 const MyModal = (props) => {
-    console.log(props.isCancelConfirmed)
     return (
         <Modal
             show={props.show}

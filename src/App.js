@@ -1,4 +1,3 @@
-import './App.css';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
 
@@ -20,13 +19,13 @@ function App() {
         <Route path='/patient/home' element={<PatientHome />} />
         <Route path='/doctor/home' element={<DoctorHome />} />
         <Route path='/doctor/purchase' element={<PurchaseApp />} />
-        <Route path='/doctor/appointment/:id' element={<AppointmentDetail/>} />
-        <Route path='/patient/book-appointment' element={<AppointmentForm/>} />
-        <Route path='/patient/edit-appointment/:id' element={<AppointmentForm/>} />
-        <Route path='/login' element={<Login/>} /> 
-        <Route path='/' element={<Login/>} /> 
-        <Route path='/signup' element={<Signup/>} />
-        <Route path='/error' element={<Error/>} />
+        <Route path='/doctor/appointment/:id' element={<AppointmentDetail />} />
+        <Route path='/patient/book-appointment' element={<AppointmentForm />} />
+        <Route path='/patient/edit-appointment/:id' element={<AppointmentForm />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/error' element={<Error />} />
 
         <Route path='*' element={<Navigate to={'/error'} />} />
       </Routes>
